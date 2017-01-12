@@ -6,9 +6,9 @@ import numpy as np
 import scipy.linalg as la
 from numpy.random import rand, multivariate_normal
 
-from processes.process import Process
-from util.util import overrides
-from util.linalg import is_psd
+from neuralfilters.processes.process import Process
+from neuralfilters.util.util import overrides
+from neuralfilters.util.linalg import is_psd
 
 class NeuralPopulation( Process, metaclass = ABCMeta):
     """

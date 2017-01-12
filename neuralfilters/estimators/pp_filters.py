@@ -6,10 +6,10 @@ import numpy as np
 from numpy import sqrt, exp, outer, pi
 from scipy.linalg import inv, det, eigvals
 
-from processes.process import Process
-from util.util import overrides, wrap_closure
-from util.linalg import is_psd
-from processes import populations
+from neuralfilters.processes.process import Process
+from neuralfilters.processes import populations
+from neuralfilters.util.util import overrides, wrap_closure
+from neuralfilters.util.linalg import is_psd
 
 class GenericPPFilter( Process ):
 

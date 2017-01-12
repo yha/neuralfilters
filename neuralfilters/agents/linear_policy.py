@@ -3,8 +3,9 @@
 import warnings
 
 import numpy as np
-from util.util import as_callable
-from util.linalg import is_psd
+
+from neuralfilters.util.util import as_callable
+from neuralfilters.util.linalg import is_psd
 
 class LinearPolicy:
     def __init__( self, A ):

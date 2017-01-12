@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 
-from processes.process import VectorProcess
-from util.util import overrides
-import util.linalg
-
 import numpy as np
 from scipy import linalg as la
 
 import warnings
+
+from neuralfilters.processes.process import VectorProcess
+from neuralfilters.util.util import overrides
+from neuralfilters import util
 
 class KalmanBucyFilter(VectorProcess):
     """

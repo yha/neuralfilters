@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
 import numpy as np
-from processes.process import Process
-from util.util import overrides
-import math
 
+import math
 import itertools
+
+from neuralfilters.processes.process import Process
+from neuralfilters.util.util import overrides
 
 def _resample( particles, counts ):
     I = np.zeros( len(particles), dtype=int )
