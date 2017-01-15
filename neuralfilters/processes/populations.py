@@ -420,7 +420,7 @@ if __name__ == '__main__':
     L = int(np.round(T/dt))
     #X = np.full( (L, 2), x0 )
     Y = ma.masked_all( (L, len(nets)) )
-    from util.progress import ProgressBar
+    from neuralfilters.util.progress import ProgressBar
     bar = ProgressBar( T, 40, 'mark sampling distribution test', 't' )
     
     tic = time.clock()
