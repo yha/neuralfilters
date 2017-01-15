@@ -176,39 +176,3 @@ def build_filter( pop, xe0, V0, A, B, D, b=0 ):
     c_terms, N_updates = build_updates( pop )
     return GenericPPFilter( p_terms, c_terms, N_updates, xe0, V0 )
 
-    
-    
-#%%
-    
-#%load_ext autoreload
-#%autoreload 2
-    
-from processes.populations import (UniformGaussianPopulation, 
-        IntervalUniformGaussianPopulation, GaussianGaussianPopulation,
-        MixturePopulation)
-#from numpy import ma
-#import matplotlib.pyplot as plt
-#from scipy.stats import uniform
-
-H = np.array([[1,0]])
-W = np.array([[1]])
-h = np.array([[1,0]])
-w = 0.1
-a, b = -1, 1
-c, G = map(np.array, ([0], [[4]]))
-base_rate = 50
-ug = UniformGaussianPopulation(W,H,base_rate)
-iug = IntervalUniformGaussianPopulation(a,b,w,h,base_rate)
-gg = GaussianGaussianPopulation(c,G,W,H,base_rate)
-mg = MixturePopulation(ug,gg)
-nets = (ug,iug,gg,mg)
-
-
-A = -0.1 * np.diag([1,1])
-def B(u): return u
-N_control = 2
-D = 0.1 * np.diag([1,1])
-xe0 = [0,0]
-V0 = 0.05 * np.diag([1,1])
-
-f = build_filter(mg,xe0,V0,A,B,D)
