@@ -132,8 +132,8 @@ class UniformGaussianPopulation( GaussianPopulation, MarkSamplingPopulation ):
     
     def __init__( self, W, H, base_rate=1.0 ):
         super().__init__( W=W, H=H, base_rate=base_rate )
-        m,n = H.shape
-        self._total_rate = base_rate * np.sqrt((2*np.pi)**m * la.det(W))
+        m,n = self.H.shape
+        self._total_rate = base_rate * np.sqrt((2*np.pi)**m * la.det(self.W))
         
     @overrides(MarkSamplingPopulation)
     def total_rate( self, x ):
